@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SVG Beaver</title>
+  <link rel="stylesheet" href="./css/panel.css">
+</head>
+<body>
+  <main class="panel">
+    <header class="panel__header">
+      <img class="panel__logo" src="./assets/svg-beaver" alt="SVG Beaver">
+      <div class="panel__meta">
+        <div class="status-pill" id="targetMode">Waiting</div>
+        <section class="card card--compact card--header">
+          <p class="card__label">Current Target</p>
+          <p class="status-line" id="documentName">No document</p>
+          <p class="status-meta" id="selectionSummary">Open a document to begin.</p>
+        </section>
+      </div>
+    </header>
+
+    <section class="card">
+      <p class="card__label">Options</p>
+
+      <fieldset class="mode-grid fieldset">
+        <label class="choice">
+          <input id="modeCombined" name="exportMode" type="radio" value="combined" checked>
+          <span>One file</span>
+        </label>
+
+        <label class="choice">
+          <input id="modeSeparate" name="exportMode" type="radio" value="separate">
+          <span>Each item</span>
+        </label>
+      </fieldset>
+
+      <label class="inline-field" for="precision">
+        <span>Decimals</span>
+        <input id="precision" class="input--compact" type="number" min="1" max="7" step="1" value="3" inputmode="numeric">
+      </label>
+
+      <label class="toggle">
+        <input id="fillCurrentColor" type="checkbox" checked>
+        <span>Fills to <code>currentColor</code></span>
+      </label>
+
+      <label class="toggle">
+        <input id="strokeCurrentColor" type="checkbox" checked>
+        <span>Strokes to <code>currentColor</code></span>
+      </label>
+
+      <label class="toggle">
+        <input id="outlineText" type="checkbox" checked>
+        <span>Outline text</span>
+      </label>
+
+      <label class="toggle">
+        <input id="includeXmlns" type="checkbox" checked>
+        <span>Keep <code>xmlns</code>. Disable for inline SVG.</span>
+      </label>
+
+      <button class="button button--primary" id="exportButton" type="button">Export SVG</button>
+    </section>
+
+    <section class="card">
+      <p class="card__label">Output</p>
+
+      <fieldset class="mode-grid fieldset">
+        <label class="choice">
+          <input id="outputRaw" name="outputFormat" type="radio" value="raw" checked>
+          <span>Raw SVG</span>
+        </label>
+
+        <label class="choice">
+          <input id="outputDataUri" name="outputFormat" type="radio" value="dataUri">
+          <span>Data URI <small>URL-encoded</small></span>
+        </label>
+      </fieldset>
+
+      <div class="button-row">
+        <button class="button button--secondary button--split" id="generateButton" type="button">Generate</button>
+        <button class="button button--secondary button--split" id="copyButton" type="button" disabled>Copy</button>
+      </div>
+
+      <label class="field field--tight" for="outputCode">
+        <span>Generated output</span>
+        <textarea id="outputCode" class="code-output" readonly spellcheck="false"></textarea>
+      </label>
+    </section>
+
+    <section class="card card--compact">
+      <p class="card__label">Result</p>
+      <p class="result" id="resultLog">No export yet.</p>
+    </section>
+  </main>
+
+  <script src="./js/panel.js"></script>
+</body>
+</html>

@@ -1,0 +1,14 @@
+.DS_Store
+
+# CEP build artifacts
+illustrator/svg-beaver-panel/dist/
+*.zxp
+*.zip
+
+# Local CEP debug/cache noise
+*.log
+
+# Local export scratch files
+illustrator/exported/
+illustrator/Ohne Titel.svg
+illustrator/b2g.svg
