@@ -32,6 +32,20 @@ Illustrator's built-in SVG export is fine for general interchange, but not for a
 - [illustrator/svg-beaver-panel](illustrator/svg-beaver-panel)
   Dockable CEP panel with a clean export flow and a mode switch for combined or separate exports.
 
+## Screenshots
+
+### Panel overview
+
+![SVG Beaver panel overview](docs/screenshots/panel-overview.png)
+
+### Separate export mode
+
+![SVG Beaver panel in each-item mode](docs/screenshots/panel-each-item.png)
+
+### Generated code output
+
+![SVG Beaver generated SVG code output](docs/screenshots/panel-code-generated.png)
+
 ## Quick Start
 
 ### Option 1: Illustrator script
